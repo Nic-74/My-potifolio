@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Lubega | Mechanical & Electrical Systems Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 0, 79, 0.3);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        /* Header Section */
+        #header {
+            width: 100%;
+            min-height: 100vh;
+            /* UPDATED: Added your background image with a dark overlay for readability */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/background.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .container {
+            padding: 10px 10%;
+            width: 100%;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 30px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 10%;
+            transition: all 0.3s ease;
+        }
+        nav.scrolled {
+            box-shadow: 0 5px 20px rgba(255, 0, 79, 0.1);
+        }
+
+        .logo {
+            width: 180px; /* Adjust width as needed */
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0 25px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff004f, #ff3366);
+            position: absolute;
+            left: 50%;
+            bottom: -6px;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff004f;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+        .menu-icon:hover {
+            color: #ff004f;
+        }
+
+        /* Header Text */
+        .header-text {
+            margin-top: 120px;
+            animation: fadeInUp 1s ease;
+        }
+        .header-text p {
+            font-size: 20px;
+            color: #ff004f;
+            font-weight: 500;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .header-text h1 {
+            font-size: 70px;
+            margin-top: 20px;
+            line-height: 1.2;
+            /* Changed to white to stand out against background image */
+            color: #fff; 
+        }
+        .header-text h1 span {
+            color: #ff004f;
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+
+        /* About Section */
+        #about {
+            padding: 100px 0;
+            position: relative;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        .about-col-1 {
+            flex-basis: 35%;
+            position: relative;
+        }
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 0, 79, 0.3);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .about-col-1 img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 25px 80px rgba(255, 0, 79, 0.5);
+        }
+        .about-col-2 {
+            flex-basis: 55%;
+        }
+        .sub-title {
+            font-size: 60px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #ff004f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        .about-col-2 p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Tabs */
+        .tab-titles {
+            display: flex;
+            margin: 30px 0;
+            gap: 40px;
+            border-bottom: 2px solid #262626;
+            padding-bottom: 10px;
+        }
+        .tab-links {
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            color: #808080;
+            transition: color 0.3s ease;
+            padding: 10px 0;
+        }
+        .tab-links:hover {
+            color: #ff004f;
+        }
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff004f, #ff3366);
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .tab-links.active-link {
+            color: #fff;
+        }
+        .tab-links.active-link::after {
+            width: 100%;
+        }
+
+        .tab-contents {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .tab-contents.active-tab {
+            display: block;
+        }
+        .tab-contents ul li {
+            list-style: none;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(38, 38, 38, 0.5);
+            border-radius: 10px;
+            border-left: 3px solid #ff004f;
+            transition: all 0.3s ease;
+        }
+        .tab-contents ul li:hover {
+            background: rgba(255, 0, 79, 0.1);
+            transform: translateX(10px);
+        }
+        .tab-contents ul li span {
+            color: #ff004f;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Services Section */
+        #services {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%);
+        }
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .services-list div {
+            background: rgba(38, 38, 38, 0.8);
+            padding: 50px 40px;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .services-list div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 79, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        .services-list div:hover::before {
+            left: 100%;
+        }
+        .services-list div:hover {
+            background: rgba(255, 0, 79, 0.1);
+            border-color: #ff004f;
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(255, 0, 79, 0.3);
+        }
+        .services-list div i {
+            font-size: 50px;
+            margin-bottom: 30px;
+            color: #ff004f;
+            transition: transform 0.5s ease;
+        }
+        .services-list div:hover i {
+            transform: scale(1.2) rotate(360deg);
+        }
+        .services-list div h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .services-list div p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        .services-list div a {
+            text-decoration: none;
+            color: #ff004f;
+            font-size: 14px;
+            margin-top: 20px;
+            display: inline-block;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        .services-list div a:hover {
+            transform: translateX(5px);
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 100px 0;
+        }
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .work {
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .work:hover {
+            transform: translateY(-10px);
+        }
+        .work img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .layer {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(255, 0, 79, 0.9) 100%);
+            border-radius: 20px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            transition: height 0.5s ease;
+        }
+        .layer h3 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .layer p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #fff;
+        }
+        .layer a {
+            margin-top: 25px;
+            color: #ff004f;
+            text-decoration: none;
+            font-size: 20px;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .layer a:hover {
+            transform: scale(1.1);
+            background: #ff004f;
+            color: #fff;
+        }
+        .work:hover img {
+            transform: scale(1.1);
+        }
+        .work:hover .layer {
+            height: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 50px auto;
+            padding: 16px 50px;
+            border: 2px solid #ff004f;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            background: transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #ff004f;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        .btn:hover::before {
+            left: 0;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 0, 79, 0.3);
+        }
+        .btn-center {
+            text-align: center;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%);
+        }
+        .contact-left {
+            flex-basis: 35%;
+        }
+        .contact-right {
+            flex-basis: 55%;
+        }
+        .contact-left p {
+            margin-top: 25px;
+            color: #b0b0b0;
+            font-size: 16px;
+        }
+        .contact-left p i {
+            color: #ff004f;
+            margin-right: 15px;
+            font-size: 22px;
+        }
+        .social-icons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+        .social-icons a {
+            text-decoration: none;
+            font-size: 28px;
+            color: #808080;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(38, 38, 38, 0.8);
+            transition: all 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #fff;
+            background: #ff004f;
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 10px 30px rgba(255, 0, 79, 0.4);
+        }
+
+        .btn2 {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff004f, #ff3366);
+            margin-top: 30px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+        .btn2::before {
+            background: linear-gradient(135deg, #ff3366, #ff004f);
+        }
+
+        .contact-right form {
+            width: 100%;
+        }
+        form input, form textarea {
+            width: 100%;
+            border: 2px solid #262626;
+            outline: none;
+            background: rgba(38, 38, 38, 0.5);
+            padding: 18px;
+            margin: 15px 0;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        form input:focus, form textarea:focus {
+            border-color: #ff004f;
+            background: rgba(38, 38, 38, 0.8);
+            box-shadow: 0 0 20px rgba(255, 0, 79, 0.2);
+        }
+        form textarea {
+            resize: vertical;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background: #1a0a1a; /* Match the bottom of the contact section */
+            font-weight: 300;
+            border-top: 1px solid #262626;
+        }
+        footer i {
+            color: #ff004f;
+            animation: heartbeat 1.5s ease infinite;
+            margin: 0 5px;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff004f, #ff3366);
+            color: #fff;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
+        }
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 79, 0.6);
+        }
+        .scroll-top.show {
+            display: flex;
+        }
+
+        /* Mobile Responsive */
+        @media only screen and (max-width: 768px) {
+            nav {
+                padding: 20px 5%;
+            }
+            .container {
+                padding: 10px 5%;
+            }
+            .menu-icon {
+                display: block;
+            }
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding-top: 80px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+            }
+            nav ul.active {
+                right: 0;
+            }
+            nav ul li {
+                margin: 20px 0;
+                width: 100%;
+                text-align: center;
+            }
+            .close-menu {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .header-text {
+                margin-top: 150px;
+            }
+            .header-text h1 {
+                font-size: 40px;
+            }
+            .header-text p {
+                font-size: 16px;
+            }
+            .sub-title {
+                font-size: 40px;
+            }
+            .about-col-1, .about-col-2 {
+                flex-basis: 100%;
+            }
+            .about-col-1 {
+                margin-bottom: 30px;
+            }
+            .contact-left, .contact-right {
+                flex-basis: 100%;
+            }
+            .tab-titles {
+                gap: 20px;
+            }
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+            .work-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div id="header">
+        <nav id="navbar">
+            <img src="images/logo.png" class="logo" alt="Nicholas Logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><i class="fas fa-times close-menu" onclick="closemenu()"></i></li>
+            </ul>
+            <i class="fas fa-bars menu-icon" onclick="openmenu()"></i>
+        </nav>
+        <div class="container">
+            <div class="header-text">
+                <p>MECHANICAL & ELECTRICAL SYSTEMS ENGINEER</p>
+                <h1>Hi, I'm <span>Nicholas</span><br>From Uganda</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Development</h2>
+                    <p>Building responsive websites and portfolios. Experienced in HTML, CSS, and integrating unique design elements for modern web experiences.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-robot"></i>
+                    <h2>Robotics & Embedded</h2>
+                    <p>Designing line-following robots, sensor integration (GPS/Webots), and obstacle avoidance systems using STM32/Arduino platforms.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-pen-ruler"></i>
+                    <h2>3D CAD Design</h2>
+                    <p>Professional 3D modeling using Creo Parametric and Fusion 360 for casing, mechanical parts, and prototypes with precision.</p>
+                    <a href="#">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/knowledge.png" alt="Knowledge Trees">
+                    <div class="layer">
+                        <h3>The Knowledge Tree</h3>
+                        <p>A solar-powered, tree-shaped educational hub providing offline touchscreen access to curriculum and vocational training for rural communities.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work1.png" alt="Autonomous Rover">
+                    <div class="layer">
+                        <h3>Autonomous Rover</h3>
+                        <p>A custom-designed robot chassis with GPS integration and obstacle avoidance, simulated in Webots and built with custom machining.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png" alt="Voice Assistant">
+                    <div class="layer">
+                        <h3>Voice Assistant Prototype</h3>
+                        <p>Developed during the ANA Systems Pre-Capstone to address real-world user needs via voice interaction and AI integration.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-center">
+                <a href="#" class="btn">See More Projects</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.JPG" alt="Nicholas Lubega">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am a Mechanical and Electrical Systems Engineer from Uganda, currently innovating in Japan. 
+                        As an Ashinaga Africa Initiative Scholar at KUAS, I bridge the gap between hardware and software. 
+                        My passion lies in creating sustainable technology for community development—specifically solving real-world problems in education and agriculture.
+                        When I'm not designing in Fusion 360 or coding in MATLAB, you can find me leading the Basketball Club or exploring Kyoto.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab(event, 'Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event, 'Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab(event, 'Education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Engineering Design</span><br>Creo Parametric, Fusion 360, 3D Printing, Machine Assembly</li>
+                            <li><span>Electrical & Embedded</span><br>STM32, Arduino, PCB Soldering, Circuit Analysis</li>
+                            <li><span>Programming & Data</span><br>MATLAB (Certified), Simulink, Python, SQL, HTML/CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li><span>Knowledge Trees Project</span><br>Lead Designer: Solar-powered offline educational hubs for rural Uganda.</li>
+                            <li><span>KUAS Basketball Club</span><br>President: Leading team activities and mentoring members.</li>
+                            <li><span>High School Student Council</span><br>President: Oversaw school-wide events at Miyakonojo Higashi.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2022 - Present</span><br>B.Eng in Mechanical & Electrical Systems | KUAS, Japan</li>
+                            <li><span>2022</span><br>Graduated Miyakonojo Higashi High School (Science & Math)</li>
+                            <li><span>Scholarship</span><br>Ashinaga Africa Initiative Scholar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> nicholaslubega74@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 080-6980-7444</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        
+                        <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © Nicholas Lubega. Made with<i class="fa-solid fa-heart"></i>in Japan.</p>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Create animated particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Tab functionality
+        const tablinks = document.getElementsByClassName("tab-links");
+        const tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(evt, tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            evt.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // Mobile menu
+        const sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.classList.add("active");
+        }
+        function closemenu() {
+            sidemenu.classList.remove("active");
+        }
+
+        // Close mobile menu when clicking on a link
+        const menuLinks = document.querySelectorAll('#sidemenu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closemenu);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll to top button
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            form.reset();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        const animatedElements = document.querySelectorAll('.work, .services-list div, .tab-contents ul li');
+        animatedElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
