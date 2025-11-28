@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicholas Lubega | Mechanical & Electrical Systems Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* Animated background particles */
+        /* --- BACKGROUND & HEADER --- */
         .particles {
             position: fixed;
             top: 0;
@@ -46,11 +47,9 @@
             100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
         }
 
-        /* Header Section */
         #header {
             width: 100%;
             min-height: 100vh;
-            /* UPDATED: Added your background image with a dark overlay for readability */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/background.jpg);
             background-size: cover;
             background-position: center;
@@ -64,7 +63,7 @@
             width: 100%;
         }
 
-        /* Navigation */
+        /* --- NAVIGATION --- */
         nav {
             display: flex;
             align-items: center;
@@ -86,7 +85,7 @@
         }
 
         .logo {
-            width: 180px; /* Adjust width as needed */
+            width: 180px;
             height: auto;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -140,7 +139,7 @@
             color: #ff004f;
         }
 
-        /* Header Text */
+        /* --- HERO TEXT --- */
         .header-text {
             margin-top: 120px;
             animation: fadeInUp 1s ease;
@@ -156,7 +155,6 @@
             font-size: 70px;
             margin-top: 20px;
             line-height: 1.2;
-            /* Changed to white to stand out against background image */
             color: #fff; 
         }
         .header-text h1 span {
@@ -166,14 +164,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         @keyframes wave {
             0%, 100% { transform: rotate(0deg); }
@@ -181,21 +173,10 @@
             75% { transform: rotate(-5deg); }
         }
 
-        /* About Section */
-        #about {
-            padding: 100px 0;
-            position: relative;
-        }
-        .row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
-        .about-col-1 {
-            flex-basis: 35%;
-            position: relative;
-        }
+        /* --- SECTIONS --- */
+        #about { padding: 100px 0; position: relative; }
+        .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 50px; }
+        .about-col-1 { flex-basis: 35%; position: relative; }
         .about-col-1 img {
             width: 100%;
             border-radius: 20px;
@@ -206,9 +187,7 @@
             transform: scale(1.05) rotate(2deg);
             box-shadow: 0 25px 80px rgba(255, 0, 79, 0.5);
         }
-        .about-col-2 {
-            flex-basis: 55%;
-        }
+        .about-col-2 { flex-basis: 55%; }
         .sub-title {
             font-size: 60px;
             font-weight: 700;
@@ -218,20 +197,9 @@
             background-clip: text;
             margin-bottom: 20px;
         }
-        .about-col-2 p {
-            color: #b0b0b0;
-            line-height: 1.8;
-            font-size: 16px;
-        }
+        .about-col-2 p { color: #b0b0b0; line-height: 1.8; font-size: 16px; }
 
-        /* Tabs */
-        .tab-titles {
-            display: flex;
-            margin: 30px 0;
-            gap: 40px;
-            border-bottom: 2px solid #262626;
-            padding-bottom: 10px;
-        }
+        .tab-titles { display: flex; margin: 30px 0; gap: 40px; border-bottom: 2px solid #262626; padding-bottom: 10px; }
         .tab-links {
             font-size: 18px;
             font-weight: 600;
@@ -241,9 +209,7 @@
             transition: color 0.3s ease;
             padding: 10px 0;
         }
-        .tab-links:hover {
-            color: #ff004f;
-        }
+        .tab-links:hover { color: #ff004f; }
         .tab-links::after {
             content: '';
             width: 0;
@@ -255,20 +221,11 @@
             transition: width 0.3s ease;
             border-radius: 2px;
         }
-        .tab-links.active-link {
-            color: #fff;
-        }
-        .tab-links.active-link::after {
-            width: 100%;
-        }
+        .tab-links.active-link { color: #fff; }
+        .tab-links.active-link::after { width: 100%; }
 
-        .tab-contents {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        .tab-contents.active-tab {
-            display: block;
-        }
+        .tab-contents { display: none; animation: fadeIn 0.5s ease; }
+        .tab-contents.active-tab { display: block; }
         .tab-contents ul li {
             list-style: none;
             margin: 20px 0;
@@ -278,32 +235,16 @@
             border-left: 3px solid #ff004f;
             transition: all 0.3s ease;
         }
-        .tab-contents ul li:hover {
-            background: rgba(255, 0, 79, 0.1);
-            transform: translateX(10px);
-        }
-        .tab-contents ul li span {
-            color: #ff004f;
-            font-size: 16px;
-            font-weight: 700;
-        }
+        .tab-contents ul li:hover { background: rgba(255, 0, 79, 0.1); transform: translateX(10px); }
+        .tab-contents ul li span { color: #ff004f; font-size: 16px; font-weight: 700; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Services Section */
-        #services {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%);
-        }
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
+        #services { padding: 100px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%); }
+        .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 50px; }
         .services-list div {
             background: rgba(38, 38, 38, 0.8);
             padding: 50px 40px;
@@ -323,9 +264,7 @@
             background: linear-gradient(90deg, transparent, rgba(255, 0, 79, 0.1), transparent);
             transition: left 0.5s ease;
         }
-        .services-list div:hover::before {
-            left: 100%;
-        }
+        .services-list div:hover::before { left: 100%; }
         .services-list div:hover {
             background: rgba(255, 0, 79, 0.1);
             border-color: #ff004f;
@@ -338,19 +277,9 @@
             color: #ff004f;
             transition: transform 0.5s ease;
         }
-        .services-list div:hover i {
-            transform: scale(1.2) rotate(360deg);
-        }
-        .services-list div h2 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .services-list div p {
-            color: #b0b0b0;
-            line-height: 1.6;
-            font-size: 15px;
-        }
+        .services-list div:hover i { transform: scale(1.2) rotate(360deg); }
+        .services-list div h2 { font-size: 28px; font-weight: 600; margin-bottom: 15px; }
+        .services-list div p { color: #b0b0b0; line-height: 1.6; font-size: 15px; }
         .services-list div a {
             text-decoration: none;
             color: #ff004f;
@@ -360,20 +289,10 @@
             font-weight: 600;
             transition: transform 0.3s ease;
         }
-        .services-list div a:hover {
-            transform: translateX(5px);
-        }
+        .services-list div a:hover { transform: translateX(5px); }
 
-        /* Portfolio Section */
-        #portfolio {
-            padding: 100px 0;
-        }
-        .work-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
+        #portfolio { padding: 100px 0; }
+        .work-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
         .work {
             border-radius: 20px;
             position: relative;
@@ -382,9 +301,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
         }
-        .work:hover {
-            transform: translateY(-10px);
-        }
+        .work:hover { transform: translateY(-10px); }
         .work img {
             width: 100%;
             height: 350px;
@@ -410,16 +327,8 @@
             text-align: center;
             transition: height 0.5s ease;
         }
-        .layer h3 {
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-        .layer p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #fff;
-        }
+        .layer h3 { font-weight: 600; margin-bottom: 15px; font-size: 24px; }
+        .layer p { font-size: 14px; line-height: 1.6; color: #fff; }
         .layer a {
             margin-top: 25px;
             color: #ff004f;
@@ -434,17 +343,9 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
-        .layer a:hover {
-            transform: scale(1.1);
-            background: #ff004f;
-            color: #fff;
-        }
-        .work:hover img {
-            transform: scale(1.1);
-        }
-        .work:hover .layer {
-            height: 100%;
-        }
+        .layer a:hover { transform: scale(1.1); background: #ff004f; color: #fff; }
+        .work:hover img { transform: scale(1.1); }
+        .work:hover .layer { height: 100%; }
 
         .btn {
             display: inline-block;
@@ -471,43 +372,16 @@
             transition: left 0.3s ease;
             z-index: -1;
         }
-        .btn:hover::before {
-            left: 0;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 0, 79, 0.3);
-        }
-        .btn-center {
-            text-align: center;
-        }
+        .btn:hover::before { left: 0; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255, 0, 79, 0.3); }
+        .btn-center { text-align: center; }
 
-        /* Contact Section */
-        #contact {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%);
-        }
-        .contact-left {
-            flex-basis: 35%;
-        }
-        .contact-right {
-            flex-basis: 55%;
-        }
-        .contact-left p {
-            margin-top: 25px;
-            color: #b0b0b0;
-            font-size: 16px;
-        }
-        .contact-left p i {
-            color: #ff004f;
-            margin-right: 15px;
-            font-size: 22px;
-        }
-        .social-icons {
-            margin-top: 40px;
-            display: flex;
-            gap: 20px;
-        }
+        #contact { padding: 100px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%); }
+        .contact-left { flex-basis: 35%; }
+        .contact-right { flex-basis: 55%; }
+        .contact-left p { margin-top: 25px; color: #b0b0b0; font-size: 16px; }
+        .contact-left p i { color: #ff004f; margin-right: 15px; font-size: 22px; }
+        .social-icons { margin-top: 40px; display: flex; gap: 20px; }
         .social-icons a {
             text-decoration: none;
             font-size: 28px;
@@ -536,13 +410,9 @@
             position: relative;
             z-index: 1;
         }
-        .btn2::before {
-            background: linear-gradient(135deg, #ff3366, #ff004f);
-        }
+        .btn2::before { background: linear-gradient(135deg, #ff3366, #ff004f); }
 
-        .contact-right form {
-            width: 100%;
-        }
+        .contact-right form { width: 100%; }
         form input, form textarea {
             width: 100%;
             border: 2px solid #262626;
@@ -560,15 +430,13 @@
             background: rgba(38, 38, 38, 0.8);
             box-shadow: 0 0 20px rgba(255, 0, 79, 0.2);
         }
-        form textarea {
-            resize: vertical;
-        }
+        form textarea { resize: vertical; }
 
         footer {
             width: 100%;
             text-align: center;
             padding: 30px 0;
-            background: #1a0a1a; /* Match the bottom of the contact section */
+            background: #1a0a1a;
             font-weight: 300;
             border-top: 1px solid #262626;
         }
@@ -583,7 +451,6 @@
             50% { transform: scale(1); }
         }
 
-        /* Scroll to top button */
         .scroll-top {
             position: fixed;
             bottom: 30px;
@@ -601,82 +468,151 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
         }
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 0, 79, 0.6);
-        }
-        .scroll-top.show {
-            display: flex;
+        .scroll-top:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 0, 79, 0.6); }
+        .scroll-top.show { display: flex; }
+
+        /* --- PROJECT OVERLAY STYLES --- */
+        .project-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: none; /* Hidden by default */
+            overflow-y: auto;
+            animation: slideUp 0.5s ease-out;
+            padding: 50px 5%;
         }
 
-        /* Mobile Responsive */
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1a0a1a;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: #808080;
+            cursor: pointer;
+            transition: 0.3s;
+            background: #262626;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .close-btn:hover { color: #fff; background: #ff004f; }
+
+        .project-header h2 {
+            font-size: 36px;
+            color: #ff004f;
+            margin-bottom: 10px;
+        }
+        .project-header h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .project-body p {
+            color: #dcdcdc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .project-body h3 {
+            color: #fff;
+            border-left: 4px solid #ff004f;
+            padding-left: 15px;
+            margin: 30px 0 15px 0;
+            font-size: 22px;
+        }
+        .project-body strong { color: #ff004f; }
+        .project-body ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .project-body li {
+            color: #b0b0b0;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .project-meta {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .project-tag {
+            background: rgba(255, 0, 79, 0.1);
+            color: #ff004f;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .project-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+        .project-gallery img:hover { transform: scale(1.05); }
+
         @media only screen and (max-width: 768px) {
-            nav {
-                padding: 20px 5%;
-            }
-            .container {
-                padding: 10px 5%;
-            }
-            .menu-icon {
-                display: block;
-            }
+            nav { padding: 20px 5%; }
+            .container { padding: 10px 5%; }
+            .menu-icon { display: block; }
             nav ul {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 250px;
-                height: 100vh;
-                background: rgba(10, 10, 10, 0.98);
-                flex-direction: column;
-                padding-top: 80px;
-                transition: right 0.3s ease;
+                position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
+                background: rgba(10, 10, 10, 0.98); flex-direction: column;
+                padding-top: 80px; transition: right 0.3s ease;
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
             }
-            nav ul.active {
-                right: 0;
-            }
-            nav ul li {
-                margin: 20px 0;
-                width: 100%;
-                text-align: center;
-            }
-            .close-menu {
-                position: absolute;
-                top: 25px;
-                right: 25px;
-                font-size: 30px;
-                cursor: pointer;
-            }
-            .header-text {
-                margin-top: 150px;
-            }
-            .header-text h1 {
-                font-size: 40px;
-            }
-            .header-text p {
-                font-size: 16px;
-            }
-            .sub-title {
-                font-size: 40px;
-            }
-            .about-col-1, .about-col-2 {
-                flex-basis: 100%;
-            }
-            .about-col-1 {
-                margin-bottom: 30px;
-            }
-            .contact-left, .contact-right {
-                flex-basis: 100%;
-            }
-            .tab-titles {
-                gap: 20px;
-            }
-            .services-list {
-                grid-template-columns: 1fr;
-            }
-            .work-list {
-                grid-template-columns: 1fr;
-            }
+            nav ul.active { right: 0; }
+            nav ul li { margin: 20px 0; width: 100%; text-align: center; }
+            .close-menu { position: absolute; top: 25px; right: 25px; font-size: 30px; cursor: pointer; }
+            .header-text { margin-top: 150px; }
+            .header-text h1 { font-size: 40px; }
+            .header-text p { font-size: 16px; }
+            .sub-title { font-size: 40px; }
+            .about-col-1, .about-col-2 { flex-basis: 100%; }
+            .about-col-1 { margin-bottom: 30px; }
+            .contact-left, .contact-right { flex-basis: 100%; }
+            .tab-titles { gap: 20px; }
+            .services-list { grid-template-columns: 1fr; }
+            .work-list { grid-template-columns: 1fr; }
+            
+            /* Overlay Mobile */
+            .project-content { padding: 20px; }
+            .project-header h2 { font-size: 28px; }
         }
     </style>
 </head>
@@ -734,22 +670,24 @@
         <div class="container">
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
-                <div class="work">
+                <div class="work" onclick="openProject('knowledgeTree')">
                     <img src="images/knowledge.png" alt="Knowledge Trees">
                     <div class="layer">
                         <h3>The Knowledge Tree</h3>
                         <p>A solar-powered, tree-shaped educational hub providing offline touchscreen access to curriculum and vocational training for rural communities.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
-                <div class="work">
+
+                <div class="work" onclick="openProject('autonomousRover')">
                     <img src="images/work1.png" alt="Autonomous Rover">
                     <div class="layer">
                         <h3>Autonomous Rover</h3>
                         <p>A custom-designed robot chassis with GPS integration and obstacle avoidance, simulated in Webots and built with custom machining.</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
+
                 <div class="work">
                     <img src="images/work-3.png" alt="Voice Assistant">
                     <div class="layer">
@@ -823,11 +761,8 @@
                     <p><i class="fa-solid fa-phone"></i> 080-6980-7444</p>
                     <div class="social-icons">
                         <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                        
                         <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        
                         <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        
                         <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
                     <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
@@ -840,6 +775,139 @@
                         <button type="submit" class="btn btn2">Send Message</button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="knowledgeTree" class="project-overlay">
+        <div class="project-content">
+            <span class="close-btn" onclick="closeProject('knowledgeTree')">&times;</span>
+            
+            <div class="project-header">
+                <h2>Knowledge Trees</h2>
+                <h3>Reconnecting the Roots of the Rural Village to the Global Digital Economy</h3>
+            </div>
+            
+            <div class="project-body">
+                <p>
+                    In the modern era, the global economy has migrated to the digital cloud, yet vast regions of rural Africa remain rooted in an analog past. While these communities are rich in human potential, they are often severed from the "underground network" of opportunity that defines the 21st century. The challenge facing rural development is not merely a lack of funding, but a lack of infrastructure that bridges the gap between education and employment.
+                </p>
+
+                <h3><i class="fa-solid fa-seedling"></i> The Philosophy: The Modern Palaver Tree</h3>
+                <p>
+                    The conceptual foundation of this project lies in the history of the "Palaver Tree." For centuries, the village tree served as the community's civic center. The Knowledge Trees project seeks to reclaim this space. By combining the communal nature of the village square with high-speed connectivity, the project transforms the Palaver Tree into a "Knowledge Tree," keeping the community rooted in its culture while branching out into the global digital mycelium.
+                </p>
+
+                <h3><i class="fa-solid fa-layer-group"></i> Structural Design</h3>
+                
+                <p>The structure is a two-story ecosystem designed to balance social impact with financial sustainability:</p>
+                
+                <ul>
+                    <li><strong>Level 0: The Knowledge Commons.</strong> The ground floor is the sanctuary for free education. It features six vandal-proof industrial touchscreens pre-loaded with offline educational content. It utilizes a "45-Minute Rule" for equitable access and houses the "Auto-Utility Wall" for phone charging.</li>
+                    <li><strong>Level 1: The Service Cockpit.</strong> The upper deck is the "Business Class" zone. A human technician manages the tree's operations, troubleshoots devices, and runs the "Village LinkedIn" initiative—digitizing land titles and CVs for local talent.</li>
+                </ul>
+
+                <h3><i class="fa-solid fa-chart-line"></i> The Regenerative Economic Model</h3>
+                <p>
+                    Unlike traditional aid, the Knowledge Tree is built on a "Regenerative Financial Model." Monthly OPEX (~¥73,500) is covered by four revenue streams:
+                </p>
+                <ul>
+                    <li><strong>Auto-Charging Lockers:</strong> Passive income from device charging.</li>
+                    <li><strong>Wi-Fi Vouchers:</strong> A "Freemium" model where education is free, but open internet is paid.</li>
+                    <li><strong>Business Services:</strong> Printing, scanning, and workstation rentals.</li>
+                    <li><strong>Employer Commissions:</strong> Fees from city employers accessing verified rural talent.</li>
+                </ul>
+
+                <h3><i class="fa-solid fa-solar-panel"></i> Technical Autonomy</h3>
+                <p>
+                    Engineered for complete autonomy in remote areas:
+                </p>
+                <ul>
+                    <li><strong>Power:</strong> 800W solar array (monocrystalline) with 2.56kWh LiFePO4 battery storage.</li>
+                    <li><strong>Lifespan:</strong> Designed for 15-year operational viability.</li>
+                    <li><strong>Connectivity:</strong> Long-range outdoor router covering a 300-meter radius.</li>
+                    <li><strong>Load Balancing:</strong> Smart prioritization of server/lights over non-essential charging.</li>
+                </ul>
+            </div>
+
+            <div class="project-meta">
+                <span class="project-tag">#SolarEnergy</span>
+                <span class="project-tag">#EducationTech</span>
+                <span class="project-tag">#RuralDevelopment</span>
+                <span class="project-tag">#Engineering</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="autonomousRover" class="project-overlay">
+        <div class="project-content">
+            <span class="close-btn" onclick="closeProject('autonomousRover')">&times;</span>
+            
+            <div class="project-header">
+                <h2>Autonomous Rover (Team Mo-09)</h2>
+                <h3>High-Speed Line Following & Obstacle Avoidance Robot</h3>
+            </div>
+
+            <div class="project-body">
+                <p>
+                    As part of the Mechatronics Lab, our team engineered an autonomous robot capable of navigating a complex field containing curves, sharp 90-degree turns, and physical obstacles. The project combined mechanical design, circuit assembly, and control theory to create a system that could make real-time decisions while maintaining speed and stability.
+                </p>
+
+                <h3><i class="fa-solid fa-cogs"></i> Mechanical & Electrical Design</h3>
+                <p>
+                    We developed the design over two stages, progressing from a basic prototype to a higher-performance Stage-2 robot. Key elements of the final design included:
+                </p>
+                <ul>
+                    <li><strong>Chassis:</strong> Custom 3D-printed PLA+ chassis for modularity, reduced weight, and easy iteration.</li>
+                    <li><strong>Actuation:</strong> Compact N20 motors with gearboxes to provide adequate torque in a small footprint.</li>
+                    <li><strong>Sensing:</strong> An 8-sensor photointerruptor array (Pololu QTR-8RC) for improved line detection and an HC-SR04 ultrasonic sensor for obstacle detection.</li>
+                    <li><strong>Processing:</strong> STM32 F303K8 microcontroller with separate supplies for logic and motors (9V for MCU, ~6V for motors).</li>
+                </ul>
+
+                <div class="project-gallery">
+                    <img src="images/chassis.png" alt="3D Printed Chassis Design">
+                    <img src="images/testfield.png" alt="Mechatronics Test Field">
+                    <img src="images/finishedrobot.jpg" alt="Finished Autonomous Rover">
+                </div>
+                <p>
+                    The gallery above shows the chassis design, the competition test field, and the assembled robot used during testing.
+                </p>
+
+                <h3><i class="fa-solid fa-code-branch"></i> Control Algorithm (PD Control)</h3>
+                <p>
+                    To achieve smooth navigation without abrupt motions, we implemented a Proportional-Derivative (PD) control loop. The algorithm computes the line position from the sensor array, derives an error relative to center, and adjusts motor speeds differentially to correct the heading.
+                </p>
+                <ul>
+                    <li><strong>Error Calculation:</strong> Error is computed from the weighted average of sensor readings versus the centerpoint.</li>
+                    <li><strong>Correction Equation:</strong> Correction = Kp * Error + Kd * (Error - LastError).</li>
+                    <li><strong>Tuning:</strong> After testing, gain values used were Kp = 0.48 and Kd = 5.5, which provided a good balance of responsiveness and stability.</li>
+                    <li><strong>Special Handling:</strong> We implemented a speed reduction for the final sharp corner to prevent overshooting.</li>
+                </ul>
+
+                <h3><i class="fa-solid fa-shield-halved"></i> Obstacle Avoidance Logic</h3>
+                <p>
+                    Stage 2 added physical obstacles on the track. The robot uses the ultrasonic sensor to detect nearby objects and runs predefined avoidance maneuvers when an obstacle is detected within a short range.
+                </p>
+                <ul>
+                    <li><strong>Detection:</strong> The ultrasonic sensor measures distance; if an object is under the threshold, the robot stops.</li>
+                    <li><strong>Maneuver:</strong> The robot executes a time-based routine (reverse, turn, pass, re-acquire line) using a switch-case counter to handle multiple obstacles sequentially.</li>
+                </ul>
+
+                <h3><i class="fa-solid fa-triangle-exclamation"></i> Results & Reflection</h3>
+                <p>
+                    During testing, the rover achieved lap times as low as 26 seconds and successfully navigated curves and obstacles under controlled conditions. However, on presentation day we experienced hardware failures (a frayed battery cable and multiple sensor faults) that prevented a successful run.
+                </p>
+                <p>
+                    <strong>Key Takeaway:</strong> Robust wiring, connector strain relief, and protective mounting for sensors are essential. Mechanical and software design must be complemented by durable assembly practices to ensure consistent performance in real-world conditions.
+                </p>
+            </div>
+
+            <div class="project-meta">
+                <span class="project-tag">#Robotics</span>
+                <span class="project-tag">#STM32</span>
+                <span class="project-tag">#C++</span>
+                <span class="project-tag">#3DPrinting</span>
+                <span class="project-tag">#ControlTheory</span>
             </div>
         </div>
     </div>
@@ -888,7 +956,6 @@
             sidemenu.classList.remove("active");
         }
 
-        // Close mobile menu when clicking on a link
         const menuLinks = document.querySelectorAll('#sidemenu a');
         menuLinks.forEach(link => {
             link.addEventListener('click', closemenu);
@@ -942,6 +1009,25 @@
                 }
             });
         });
+
+        // --- PROJECT OVERLAY LOGIC ---
+        function openProject(projectId) {
+            document.getElementById(projectId).style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeProject(projectId) {
+            document.getElementById(projectId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Resume background scrolling
+        }
+
+        // Close overlay if clicking outside the content box
+        window.onclick = function(event) {
+            if (event.target.classList.contains('project-overlay')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = 'auto';
+            }
+        }
 
         // Intersection Observer for fade-in animations
         const observerOptions = {
